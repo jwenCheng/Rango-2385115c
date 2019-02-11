@@ -1,0 +1,15 @@
+<ul>
+    {% if cats %}
+        {% for c in cats %}
+            <li>
+                 <strong>
+                <a href="{% url 'show_category' c.slug %}">{{ c.name }}</a>
+                 </strong>
+            </li>
+        {% endfor %}
+    {%else%}
+        <li>
+            <a href="{% url 'show_category' c.slug %}">{{ c.name }}</a>
+        </li>
+    {% endif %}
+</ul>
